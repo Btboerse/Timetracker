@@ -1,12 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <script>scr="script.js"</script>
-    </body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lynix Digital Logistics – Produktüberblick</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="brand">Lynix Digital Logistics</div>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+                <span class="visually-hidden">Menü öffnen</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
+                <a href="#scope">Ziele</a>
+                <a href="#roles">Rollen</a>
+                <a href="#features">Kernfunktionen</a>
+                <a href="#architecture">Architektur</a>
+                <a href="#compliance">Compliance</a>
+                <a href="#roadmap">Roadmap</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow">Digitale Plattform für Baustellenlogistik</p>
+                    <h1>Ende-zu-Ende Transparenz und Automatisierung für kleine &amp; mittlere Fuhrparks.</h1>
+                    <p class="lead">
+                        Lynix Digital Logistics vereint Fahrer-App, Dispositions-Dashboard und automatisierte Abrechnung in einer mandantenfähigen Plattform. Offline-fähig, DSGVO-konform und in der EU gehostet.
+                    </p>
+                    <div class="cta-group">
+                        <a class="button primary" href="#features">Kernfunktionen entdecken</a>
+                        <a class="button secondary" href="#architecture">Technik-Stack ansehen</a>
+                    </div>
+                </div>
+                <div class="hero-card" role="presentation">
+                    <h2>MVP Erfolgskriterien</h2>
+                    <ul>
+                        <li>Job vollständig offline erfassbar inkl. Signatur &amp; OCR.</li>
+                        <li>Rechnungen und DATEV/BMD Export am selben Tag.</li>
+                        <li>Live-Tracking &amp; Geofencing für alle Fahrzeuge.</li>
+                        <li>Mandantensicherheit via Supabase RLS und Audit-Log.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="scope" class="section">
+            <div class="container two-column">
+                <div>
+                    <h2>Ziele &amp; Scope</h2>
+                    <p>
+                        Fokus auf Baustellenlogistik mit Beton, Kippern und Schüttgut für Flotten von 5 bis 100 Fahrzeugen. Das System digitalisiert den kompletten Regieschein-Prozess und liefert Echtzeittransparenz für Disposition und Backoffice.
+                    </p>
+                    <ul class="icon-list">
+                        <li><span class="icon">📄</span> Papierlose Prozesse vom Regieschein bis zur Rechnung.</li>
+                        <li><span class="icon">⚡</span> Fakturierung noch am selben Tag durch automatisierte Workflows.</li>
+                        <li><span class="icon">📉</span> Minimierung von Leerfahrten und Standzeiten durch Live-Tracking.</li>
+                        <li><span class="icon">📊</span> Analysen zu Kosten, Auslastung, Wartung und Margen.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Plattformen &amp; Vorgaben</h3>
+                    <ul>
+                        <li>Fahrer-App: Flutter (Android 10+, iOS 15+), offline-first.</li>
+                        <li>Dispo-Dashboard: Web (Flutter Web oder React) optimiert für Desktop.</li>
+                        <li>Backend &amp; Datenhaltung: Supabase (PostgreSQL, Auth, Storage, Edge Functions).</li>
+                        <li>Hosting innerhalb der EU mit TLS und Verschlüsselung ruhender Daten.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="roles" class="section muted">
+            <div class="container">
+                <h2>User-Rollen &amp; Verantwortlichkeiten</h2>
+                <div class="role-grid">
+                    <article>
+                        <h3>Fahrer</h3>
+                        <p>Erhalten Jobs, dokumentieren Regiescheine, erfassen Nachweise und kommunizieren mit der Disposition.</p>
+                    </article>
+                    <article>
+                        <h3>Disponent</h3>
+                        <p>Plant Touren, disponiert Fahrzeuge und überwacht Live-Status inklusive ETA und Warnungen.</p>
+                    </article>
+                    <article>
+                        <h3>Backoffice</h3>
+                        <p>Pflegt Preislisten, prüft Regiescheine, erstellt Rechnungen und Exporte.</p>
+                    </article>
+                    <article>
+                        <h3>Admin</h3>
+                        <p>Verwaltet Mandanten, Rollen, Rechte sowie Stammdaten für Kunden, Fahrzeuge, Materialien und Werke.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <h2>Kernfunktionen</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Fahrer-App</h3>
+                        <ul>
+                            <li>Offline-fähige Jobliste mit Workflow „Anfahrt → Beladung → Lieferung → Ablage“.</li>
+                            <li>Digitale Regiescheine mit On-Device OCR, KI-Feldextraktion und E-Signatur.</li>
+                            <li>Geofencing &amp; Hintergrundtracking mit konfigurierbaren Intervallen.</li>
+                            <li>Chat, Sprach-zu-Text Notizen und Medienanhänge.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Dispo-Dashboard</h3>
+                        <ul>
+                            <li>Tourenplanung, Vorlagen und wiederkehrende Jobs.</li>
+                            <li>Live-Karte mit Ampelstatus, ETA und Warnungen.</li>
+                            <li>Preislisten mit Zuschlägen, Mindestpreisen und Einheitensteuerung.</li>
+                            <li>Automatische Rechnungsvorschläge, PDFs und Exportformate.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Backoffice &amp; Buchhaltung</h3>
+                        <ul>
+                            <li>Stammdatenverwaltung für Kunden, Projekte, Fahrzeuge und Materialien.</li>
+                            <li>Revisionssichere Dokumentenablage mit Supabase Storage Buckets.</li>
+                            <li>DATEV, BMD, CSV und OP-Listen Export.</li>
+                            <li>Berichte zu Umsatz, Auslastung, Leerkilometern und Margen.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Fleet Module (MVP)</h3>
+                        <ul>
+                            <li>Wartungsintervalle mit Checklisten und Terminplanung.</li>
+                            <li>Treibstoff-Importe mit Ausreißer-Erkennung.</li>
+                            <li>Störungsmeldungen aus der Fahrer-App inkl. Fotos und Prioritäten.</li>
+                            <li>Erweiterbar für Telematik/OBD und Routenoptimierung.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ocr" class="section muted">
+            <div class="container two-column">
+                <div>
+                    <h2>OCR &amp; KI-gestützte Erfassung</h2>
+                    <p>Die Kombination aus On-Device- und Server-OCR liefert schnelle Ergebnisse auch bei schwacher Konnektivität. KI-Parser erkennen Pflichtfelder und erzeugen strukturierte Daten.</p>
+                    <ul>
+                        <li>Kanten- &amp; Perspektivkorrektur, adaptive Belichtung und Qualitätsfeedback.</li>
+                        <li>Confidence-Scoring löst Review-Prozesse für Fahrer oder Backoffice aus.</li>
+                        <li>Lernfähigkeit durch Feedback-Loops und Template-Matching pro Werk.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>End-to-End Ablauf</h3>
+                    <ol>
+                        <li>Scan &amp; Vorprüfung in der App (offline möglich).</li>
+                        <li>Sync &amp; OCR-Verarbeitung via Supabase Edge Function.</li>
+                        <li>KI-Mapping auf Kunde, Baustelle, Material, Mengen und Zeiten.</li>
+                        <li>Review &amp; Freigabe im Dashboard bei Unsicherheiten.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="section">
+            <div class="container">
+                <h2>Technische Architektur</h2>
+                <div class="architecture-grid">
+                    <article>
+                        <h3>Client-Layer</h3>
+                        <p>Flutter-App (mobile) und Web-Dashboard teilen Designsystem &amp; Komponentenbibliothek. Offline-Speicher via SQLite/Hive und synchronisierte Redux/Bloc Stores.</p>
+                    </article>
+                    <article>
+                        <h3>Backend-Layer</h3>
+                        <p>Supabase als Managed Stack mit PostgreSQL, Row-Level-Security pro tenant_id, Auth mit JWT/2FA, Storage-Buckets für Dokumente sowie Edge Functions für Geschäftslogik.</p>
+                    </article>
+                    <article>
+                        <h3>Integrationen</h3>
+                        <p>Webhook-API für Auftragsimport &amp; Statusupdates, Exportpipelines zu DATEV/BMD, SMTP/Sendgrid für PDF-Zustellung, Map-Provider konfigurierbar (OpenStreetMap, HERE, TomTom).</p>
+                    </article>
+                    <article>
+                        <h3>Monitoring &amp; Ops</h3>
+                        <p>Health-Checks, zentrale Logs, Sentry, Metrics-Dashboards (Jobs/Tag, Sync-Fehler, OCR-Latenzen) sowie automatisierte Backups &amp; Disaster-Recovery-Pläne.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="data" class="section muted">
+            <div class="container">
+                <h2>Datenmodell (Auszug)</h2>
+                <div class="data-table">
+                    <div>
+                        <h3>Mandanten &amp; Benutzer</h3>
+                        <ul>
+                            <li><strong>tenants</strong> – Mandantenverwaltung mit Name, Branding, Settings.</li>
+                            <li><strong>users</strong> – Authentifizierte Personen mit Rollen &amp; Claims.</li>
+                            <li><strong>drivers</strong> – Fahrerprofile inkl. Führerschein und Fahrzeugzuordnung.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Operative Daten</h3>
+                        <ul>
+                            <li><strong>jobs</strong> – Aufträge inkl. Status-Maschine von Planung bis Abrechnung.</li>
+                            <li><strong>job_events</strong> – Zeit- &amp; Geo-gestempelte Ereignisse (Geofence, Status).</li>
+                            <li><strong>delivery_notes</strong> – OCR-Daten, Signaturen, Anhänge.</li>
+                            <li><strong>attachments</strong> – Datei-Metadaten mit Zugriff via RLS.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Finanz &amp; Pricing</h3>
+                        <ul>
+                            <li><strong>price_rules</strong> – Kunden-/Projektbezogene Preislogiken inkl. Zuschläge.</li>
+                            <li><strong>invoices</strong> &amp; <strong>invoice_lines</strong> – Rechnungsläufe und Positionen.</li>
+                            <li><strong>fuel_transactions</strong> &amp; <strong>maintenance_tasks</strong> – Fuhrparkdaten.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="compliance" class="section">
+            <div class="container two-column">
+                <div>
+                    <h2>Security &amp; Compliance</h2>
+                    <ul>
+                        <li>JWT-basierte Authentifizierung, optionale 2FA und feingranulare Rollen.</li>
+                        <li>Row-Level-Security, Audit-Logs und Datenverschlüsselung in Transit &amp; at rest.</li>
+                        <li>GDPR-Prozesse: AV-Verträge, Löschkonzept, Datenexport und Rechtemanagement.</li>
+                        <li>Verfügbarkeit &gt; 99,5 % mit Health-Checks, Incident-Response und Backups.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Performance-Ziele</h3>
+                    <ul>
+                        <li>App-Start &lt; 3 s, Listen-/Filter-Antwort &lt; 1 s.</li>
+                        <li>OCR-Resultate &lt; 5 s serverseitig, Offline-Sync mit Backoff-Retry.</li>
+                        <li>Barrierefreiheit: Kontrast, große Touchziele, Screenreader-Texte.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="ci" class="section muted">
+            <div class="container two-column">
+                <div>
+                    <h2>CI/CD &amp; Qualität</h2>
+                    <ul>
+                        <li>Getrennte Repositories für App, Dashboard und Backend oder Mono-Repo mit Workspaces.</li>
+                        <li>Supabase-Migrationen als versionierte SQL-Skripte.</li>
+                        <li>Automatisierte Pipelines für Linting, Tests, Build &amp; Release.</li>
+                        <li>E2E-Testpfad „Job → Regieschein → Rechnung → Export“.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Telemetry &amp; Support</h3>
+                    <ul>
+                        <li>Sentry für Crash- und Performance-Tracking.</li>
+                        <li>Metrics-Dashboards für Sync-Fehlerquote, Jobs/Tag, OCR-Erfolgsraten.</li>
+                        <li>Support-Playbooks und Admin-Tools für Mandanten-Onboarding.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="section">
+            <div class="container">
+                <h2>Roadmap &amp; Erweiterungen</h2>
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <h3>MVP Deliverables</h3>
+                        <ul>
+                            <li>Fahrer-App inkl. Offline-Modus, OCR, Signatur und Sync-Queue.</li>
+                            <li>Dashboard für Dispo, Backoffice und Admin mit Rollenrechten.</li>
+                            <li>Automatisierte Rechnungsstellung inkl. PDF und DATEV/BMD Export.</li>
+                            <li>Dokumentation (Setup, Betrieb, Rechte-Matrix) &amp; Testprotokolle.</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-card">
+                        <h3>Post-MVP Optionen</h3>
+                        <ul>
+                            <li>Routenoptimierung mit Mehrstopp- und Zeitfensterlogik.</li>
+                            <li>Telematik-Integration (OBD, Kraftstoff, Fahrverhalten).</li>
+                            <li>Kundenportal für Auftragsanlage, Status und Dokumente.</li>
+                            <li>Zahlungslinks und weitere Exportformate (sevDesk, Lexoffice, XRechnung).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2024 Lynix Digital Logistics. EU-Hosting &amp; Datenschutz inklusive.</p>
+                <a class="back-to-top" href="#top">Zurück nach oben ↑</a>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
 </html>
